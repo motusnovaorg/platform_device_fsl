@@ -23,6 +23,7 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 PRODUCT_COPY_FILES += \
 	device/fsl/pico_8m/init.rc:root/init.freescale.rc \
+	device/fsl/pico_8m/init.linux.rc:root/init.linux.rc \
 	device/fsl/pico_8m/init.imx8mq.rc:root/init.freescale.imx8mq.rc \
 	device/fsl/pico_8m/init.usb.rc:root/init.freescale.usb.rc
 
@@ -47,6 +48,14 @@ DEVICE_PACKAGE_OVERLAYS := device/fsl/pico_8m/overlay
 PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_AAPT_CONFIG += xlarge large tvdpi hdpi xhdpi
+
+# Ubuntu chroot file
+PRODUCT_COPY_FILES += \
+        external/ubuntu-image/ubuntu-bionic-chroot.img.gz:system/ubuntu/ubuntu-bionic-chroot.img.gz \
+	external/ubuntu-image/install-chroot.sh:system/bin/install-chroot.sh \
+	external/ubuntu-image/mount-chroot.sh:system/bin/mount-chroot.sh \
+	external/ubuntu-image/stage2.sh:system/bin/stage2.sh \
+	external/ubuntu-image/stage3.sh:system/bin/stage3.sh 
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.audio.output.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.output.xml \

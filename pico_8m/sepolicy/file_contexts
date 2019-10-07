@@ -30,3 +30,11 @@
 /dev/FreescaleMagnetometer      u:object_r:sensors_device:s0
 /dev/FreescaleGyroscope         u:object_r:sensors_device:s0
 /dev/sda[0-8]*                  u:object_r:fuse:s0
+
+# Ubuntu
+/system/ubuntu		         u:object_r:system_file:s0
+/system/bin/install-chroot.sh    u:object_r:install-chroot_exec:s0
+/system/bin/mount-chroot.sh      u:object_r:mount-chroot_exec:s0
+/system/bin/stage2.sh            u:object_r:stage2_exec:s0
+/system/bin/stage3.sh            u:object_r:stage3_exec:s0
+

@@ -1,6 +1,7 @@
 import init.${ro.hardware}.usb.rc
 import init.${ro.hardware}.${ro.boot.soc_type}.rc
 import init.${ro.hardware}.${ro.boot.storage_type}.rc
+import init.linux.rc
 
 on early-init
     # mount the debugfs

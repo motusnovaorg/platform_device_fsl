@@ -27,18 +27,25 @@ PRODUCT_PACKAGES += \
 	libion \
 	vndk-sp
 
+#ifneq ($(PRODUCT_IMX_CAR),true)
+#PRODUCT_PACKAGES += \
+#	Gallery2				\
+#	SoundRecorder				\
+#	Camera					\
+#	LegacyCamera                            \
+#	Email					\
+#	CactusPlayer                            \
+#	ethernet                                \
+#	LiveWallpapersPicker			\
+#	MagicSmokeWallpapers			\
+#	CubeLiveWallpapers
+#endif
+
 ifneq ($(PRODUCT_IMX_CAR),true)
 PRODUCT_PACKAGES += \
-	Gallery2				\
-	SoundRecorder				\
-	Camera					\
-	LegacyCamera                            \
+	ethernet				\
 	Email					\
-	CactusPlayer                            \
-	ethernet                                \
-	LiveWallpapersPicker			\
-	MagicSmokeWallpapers			\
-	CubeLiveWallpapers
+	busybox
 endif
 
 
